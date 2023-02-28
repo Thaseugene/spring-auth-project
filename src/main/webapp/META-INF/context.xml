@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Context>
+    <Resource
+            driverClassName="com.mysql.cj.jdbc.Driver"
+            maxActive="4"
+            maxIdle="2"
+            maxWait="5000"
+            name="jdbc/springAuthProject"
+            username="root"
+            password="qayuzklhhy"
+            type="javax.sql.DataSource"
+            url="jdbc:mysql://localhost:3306/news_service_db?serverTimezone=UTC"
+            validationQuery="SELECT 1">
+    </Resource>
+</Context>

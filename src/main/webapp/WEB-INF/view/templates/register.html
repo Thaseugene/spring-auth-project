@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+                <h2 class="heading-section">Welcome</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-5">
+                <div class="login-wrap p-4 p-md-5">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-user-o"></span>
+                    </div>
+                    <h3 class="text-center mb-4">Register</h3>
+                    <form th:action="@{/reg/processForm}" method="post" class="login-form" th:object="${userForm}">
+                        <div class="form-group">
+                            <input type="text" class="form-control rounded-left" placeholder="Name" name="name" th:field="*{name}" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control rounded-left" placeholder="Surname" name="surname" th:field="*{surname}" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control rounded-left" placeholder="Email" name="email" th:field="*{email}" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control rounded-left" placeholder="Login" name="login" th:field="*{login}" required>
+                        </div>
+                        <div class="form-group d-flex">
+                            <input type="password" class="form-control rounded-left" placeholder="Password" name="password" th:field="*{password}" required>
+                        </div>
+                        <div class="form-group d-flex">
+                            <input type="password" class="form-control rounded-left" placeholder="Confirm password" name="confirmPassword" th:field="*{confirmPassword}" required>
+                        </div>
+                            <div class="row justify-content-center" th:if="${param.error != null}">
+                                <p th:text="${param.error}" style="color: red"></p>
+                            </div>
+                            <div class="row justify-content-center" th:if="${param.message != null}">
+                                <p th:text="${param.message}" style="color: green"></p>
+                            </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
